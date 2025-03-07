@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
 
-    // Menggunakan prepare statement untuk keamanan
+    
     $sql = "SELECT * FROM masyarakat WHERE nik = ? AND username = ? AND password = ?";
     $stmt = $koneksi->prepare($sql);
     $stmt->bind_param("sss", $nik, $username, $password);
